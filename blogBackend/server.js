@@ -14,6 +14,10 @@ app.listen(PORT ,()=>{
   console.log("Server for writians estabilished at PORT :" + PORT);
 })
 
+//set rotes
+
+app.use("/posts",require("./routes/postRoutes"));
+
 //mongoose
 
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser:true, useUnifiedTopology:true},(err)=>{
