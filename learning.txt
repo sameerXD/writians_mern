@@ -15,10 +15,6 @@ Returns middleware that only parses JSON and only looks at requests where the Co
 
 
 
-cloudMongod = 
-username= writians
-password=8QwpQ4Tyn3qetvq
-
 
 
 module.export ::==>>The module.exports is a special object which is included in every JavaScript file in the Node.js application by default. The module is a variable that represents the current module, 
