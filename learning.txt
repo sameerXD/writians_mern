@@ -1,0 +1,52 @@
+cors ::===>>
+Cross-origin resource sharing (CORS) allows AJAX requests to skip the Same-origin policy and access resources from remote hosts.
+
+
+
+express.json([options])::==>>
+
+This middleware is available in Express v4.16.0 onwards.
+
+This is a built-in middleware function in Express. It parses incoming requests with JSON payloads and is based on body-parser.
+
+
+Returns middleware that only parses JSON and only looks at requests where the Content-Type header matches the type option.
+ This parser accepts any Unicode encoding of the body and supports automatic inflation of gzip and deflate encodings.
+
+
+
+cloudMongod = 
+username= writians
+password=8QwpQ4Tyn3qetvq
+
+
+
+module.export ::==>>The module.exports is a special object which is included in every JavaScript file in the Node.js application by default. The module is a variable that represents the current module, 
+and exports is an object that will be exposed as a module. So, whatever you assign to module.exports will be exposed as a module.
+
+
+routes ==>> they are basically end points of your requests 
+       >>you use async for error handling
+
+============================================================================steps========================================================================================
+1>mainfile => start react
+2>create directory backend 
+>>install npm , express,cors,dotenv,mongoose
+>>create server.js 
+  >>start the server
+  >>require mongoose
+3>mongoose atlas (cluster setup)
+4>create .env and paste the mongoose key in a parameter
+  >>use the key inside .env (precess.env.mongoose_uri) to connect to the mongoose
+
+  >>callback function to check the connection
+
+5>create app.js and index.js in src folder
+  >>  create index.html inside public directory 
+
+6>create a schema inside another directory and also create a model in the same file
+
+7>handle the endpoints of your api through routes 
+  >>create a new folder called routes
+  >>create a file called post Routes
+    >>it handles your post json data retrieve it , construct post model and also saves it
