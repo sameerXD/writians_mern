@@ -3,7 +3,7 @@ import React,{useState,useEffect} from "react";
 
 function Post(props){
   const [post,setPost] = useState({});
-  const tik =[1,2,3]
+  
   useEffect(()=>{
     getPosts();
   },[]);

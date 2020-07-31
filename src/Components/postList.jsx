@@ -26,6 +26,7 @@ const [posts,setPosts] = useState([]);
 
 useEffect(() => {
    getPosts();
+
  }, []);
 
 //using async and await to get promise
@@ -38,6 +39,10 @@ const getPosts = async ()=>{
   setPosts(set);
 
 };
+
+
+
+
 
   return (
     <div>
