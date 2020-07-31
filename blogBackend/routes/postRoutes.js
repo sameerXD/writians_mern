@@ -23,6 +23,15 @@ const newPost = new Post({
 
 });
 
+//Delete POST
+
+router.delete("/:id",async(req,res)=>{
+  Post.findByIdAndRemove({_id: req.params.id},(err,post)=>{
+    if (err) return next(err);
+    res.json(post);
+  })
+})
+
 router.get("/", async(req,res)=>{
   const posts = await Post.find();
   res.json(posts);

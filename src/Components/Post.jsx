@@ -1,9 +1,9 @@
 import React,{useState,useEffect} from "react";
-
+import {Link} from "react-router-dom";
 
 function Post(props){
   const [post,setPost] = useState({});
-  
+
   useEffect(()=>{
     getPosts();
   },[]);
@@ -24,6 +24,9 @@ function Post(props){
   return(
     <div>
      {renderPost()}
+     <Link to={"/posts/delete/" + post._id}>
+     <button key = {post._id}>Delete Post</button>
+     </Link>
     </div>
   )
 };
