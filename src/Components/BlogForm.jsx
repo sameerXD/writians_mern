@@ -6,23 +6,20 @@ import {
 import PostBlog from "./PostBlog";
 
 function BlogForm(props){
-  const[data ,setData] = useState({title:"",tags:"",createdAt:"",html:""});
+  const[data ,setData] = useState({title:"",tags:"",html:""});
   const[set, handleSet] = useState(false);
+  //DESTRUCTURE THE DATA
   var {title,tags,createdAt,html} = data;
+
+
   function handleChange(event){
-    if (event.target.placeholder==="title"){
-      setData({title : event.target.value});
-
-    }else if(event.target.placeholder==="tags"){
-      setData({tags: event.target.value});
-
-    }else if(event.target.placeholder==="created at"){
-      setData({createdAt : event.target.value});
-
-    }else if(event.target.placeholder==="html"){
-      setData({html : event.target.value});
-
-    }
+    const {name,value} = event.target;
+    setData(prevValue=>{
+      return {
+        ...prevValue,
+        [name]:value
+      }
+    })
      }
 
   function handleClick(event){
@@ -31,14 +28,6 @@ function BlogForm(props){
   }
 
 
-
-//form
-// <input type="text" id="lname" onChange = {handleChange} placeholder = "tags"   />
-//
-// <input type="text" id="lname" onChange = {handleChange} placeholder = "created at"  />
-//
-// <input type="text" id="html"  onChange = {handleChange}  placeholder = "html" />
-
   return(
     <div className="container">
         <h1>Hello {title}</h1>
@@ -46,29 +35,28 @@ function BlogForm(props){
           <input
             onChange={handleChange}
             type="text"
-            placeholder="title"
+            name="title"
+            placeholder="TITLE"
             value={title}
           />
           <input
             onChange={handleChange}
             type="text"
+            name="tags"
             placeholder="tags"
             value={tags}
           />
+    
           <input
             onChange={handleChange}
             type="text"
-            placeholder="createdAt"
-            value={createdAt}
-          />
-          <input
-            onChange={handleChange}
-            type="text"
+            name="html"
             placeholder="html"
             value={html}
           />
+
           <button type="submit" onClick={handleClick}>Submit</button>
-          {set?<PostBlog title = {title} tags = {tags} createdAt={createdAt} html={html}/>:console.log("error")}
+          {set?<PostBlog title = {title} tags = {tags}  html={html}/>:console.log("error")}
         </form>
       </div>
 )
