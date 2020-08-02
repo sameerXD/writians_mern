@@ -6,12 +6,15 @@ import Post from "./Components/Post";
 import PostBlog from "./Components/PostBlog";
 import BlogForm from "./Components/BlogForm";
 import DeletePost from "./Components/DeletePost";
+import UpdatePost from "./Components/UpdatePost";
+//component
 
 function App(){
   return(
     <BrowserRouter>
     <Switch>
     <Route path = "/posts/delete/:id" component = {DeletePost}/>
+    <Route path = "/posts/update/:id" component = {UpdatePost}/>
     <Route path ="/posts/form" component={BlogForm}/>
     <Route path = "/posts/post" component={PostBlog}/>
     <Route path ="/posts/:id" component={Post}/>

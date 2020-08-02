@@ -42,4 +42,22 @@ router.get("/:id",async (req,res)=>{
   res.json(post);
 } )
 
+// update data
+
+router.put("/update/:id",async(req,res)=>{
+  const {title , createdAt, tags, html} = req.body;
+  console.log(title);
+  Post.findOneAndUpdate({_id:req.params.id},{title,
+  createdAt,
+  tags,
+  html},(err,post)=>{
+    if (err){
+      console.log(err);
+    }else{
+      res.json(post)
+    }
+  });
+  }
+)
+
 module.exports = router;

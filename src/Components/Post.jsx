@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from "react";
 import {Link} from "react-router-dom";
 
+import DeletePost from "./DeletePost";
 function Post(props){
   const [post,setPost] = useState({});
+  const[set, handleSet] = useState(false);
 
   useEffect(()=>{
     getPosts();
@@ -20,12 +22,20 @@ function Post(props){
   function renderPost(){
     return <div dangerouslySetInnerHTML={renderHtml()}></div>;
   }
+function k1(){
+  console.log(props.match.params.id);
+  handleSet(true);
 
+}
   return(
     <div>
      {renderPost()}
-     <Link to={"/posts/delete/" + post._id}>
-     <button key = {post._id}>Delete Post</button>
+
+     <button key = {post._id} onClick={() => {if(window.confirm('Delete the item?')){k1()};}}>Delete Post</button>
+     {set?<DeletePost k11={post._id}/>:console.log("error")}
+
+     <Link to={"/posts/update/" + post._id}>
+     <button key = {post._id}>Update Post</button>
      </Link>
     </div>
   )
